@@ -1,0 +1,200 @@
+/*
+  APEXPATH White + Orange Theme
+  File location: src/apexpath-white-orange.css
+
+  Add this import AFTER your other CSS imports in src/App.tsx:
+  import "./apexpath-white-orange.css";
+
+  This file includes:
+  - Global white/orange theme variables
+  - Common dashboard/sidebar/card overrides
+  - APEX Buddy chatbot overrides
+  - Map marker colour variables
+
+  Note: selectors for your dashboard depend on the class names used in your project.
+  The APEX Buddy selectors match the ApexBuddy.css component shared earlier.
+*/
+
+:root {
+  color-scheme: light;
+  --apex-orange: #F28C28;
+  --apex-orange-dark: #DD7414;
+  --apex-orange-soft: #FFF0DE;
+  --apex-orange-pale: #FFF7EF;
+  --apex-white: #FFFFFF;
+  --apex-text: #252525;
+  --apex-muted: #77716B;
+  --apex-border: #F0DCC8;
+  --apex-success: #16A36A;
+  --apex-danger: #DC4545;
+
+  --map-vehicle: #3478FF;
+  --map-two-wheeler: #22D3A6;
+  --map-order: #F59E0B;
+  --map-relay: #A855F7;
+  --map-warehouse: #FFB45E;
+  --map-background: #FFF7EF;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #FFFCF8;
+  color: var(--apex-text);
+}
+
+/* Common dashboard surfaces. These apply only where the matching classes exist. */
+.card,
+.dashboard-card,
+.panel,
+.stat-card,
+.metric-card,
+.content-card {
+  color: var(--apex-text);
+  background: var(--apex-white);
+  border-color: var(--apex-border);
+  box-shadow: 0 4px 16px rgba(110, 66, 25, 0.06);
+}
+
+/* Common navigation/sidebar patterns. */
+.sidebar,
+aside {
+  color: var(--apex-text);
+  background: var(--apex-white);
+  border-color: var(--apex-border);
+}
+
+.sidebar a,
+.sidebar button,
+aside nav a,
+aside nav button {
+  color: #6E6257;
+}
+
+.sidebar a.active,
+.sidebar button.active,
+aside nav a[aria-current="page"],
+aside nav button[aria-current="page"] {
+  color: #A6530C;
+  background: var(--apex-orange-soft);
+}
+
+/* Common primary buttons. */
+button.primary,
+.btn-primary,
+.button-primary,
+button[data-variant="primary"] {
+  color: var(--apex-white);
+  background: var(--apex-orange);
+  border-color: var(--apex-orange);
+}
+
+button.primary:hover,
+.btn-primary:hover,
+.button-primary:hover,
+button[data-variant="primary"]:hover {
+  background: var(--apex-orange-dark);
+}
+
+/* APEX Buddy chatbot: these selectors match the ApexBuddy.css file. */
+.buddy-window {
+  color: #29231E;
+  background: #FFFFFF;
+  border: 1px solid #F4C89E;
+  box-shadow: 0 20px 60px rgba(153, 81, 20, 0.18);
+}
+
+.buddy-header {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #F28C28, #E76F00);
+}
+
+.buddy-mascot,
+.buddy-mini-face {
+  color: #FFFFFF;
+  background: linear-gradient(145deg, #FFB45E, #E87512);
+  border-color: #FFE0BE;
+}
+
+.buddy-welcome {
+  color: #99500D;
+  background: #FFF4E7;
+  border-color: #F6DFC5;
+}
+
+.buddy-bubble {
+  color: #302820;
+  background: #FFF8F0;
+  border-color: #F2DFC9;
+}
+
+.buddy-bubble.user {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #F28C28, #E87512);
+  border-color: #E87512;
+}
+
+.buddy-actions button,
+.buddy-shortcuts button {
+  color: #A6530C;
+  background: #FFF5E9;
+  border-color: #F2D3B2;
+}
+
+.buddy-actions button:hover,
+.buddy-shortcuts button:hover {
+  background: #FFE8D0;
+  border-color: #F28C28;
+}
+
+.buddy-composer {
+  background: #FFFFFF;
+  border-color: #F2DFC9;
+}
+
+.buddy-composer input {
+  color: #29231E;
+  background: #FFFCF8;
+  border-color: #EBD7C3;
+}
+
+.buddy-composer input:focus {
+  border-color: #F28C28;
+}
+
+.buddy-composer > button,
+.buddy-launcher {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #F6A13F, #E87512);
+  border-color: #F4B56F;
+}
+
+.buddy-launcher-robot {
+  color: #FFFFFF;
+  background: linear-gradient(145deg, #FFC477, #E87512);
+  border-color: #FFE0BE;
+}
+
+.buddy-footer {
+  color: #8C7967;
+  background: #FFFFFF;
+}
+
+/* If your map uses custom marker classes, apply these classes in its marker setup. */
+.map-marker-vehicle { background: var(--map-vehicle); }
+.map-marker-two-wheeler { background: var(--map-two-wheeler); }
+.map-marker-order { background: var(--map-order); }
+.map-marker-relay { background: var(--map-relay); }
+.map-marker-warehouse { background: var(--map-warehouse); }
+
+@media (prefers-reduced-motion: reduce) {
+  .buddy-window,
+  .buddy-launcher {
+    animation: none;
+    transition: none;
+  }
+}
